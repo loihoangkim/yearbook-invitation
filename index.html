@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Thư mời chụp kỷ yếu – Phương Uyên 12A10</title>
+  <meta name="description" content="Trân trọng mời bạn tham gia buổi chụp ảnh kỷ yếu của Phương Uyên - 12A10!">
+  <meta name="theme-color" content="#fbe3e8">
+
+  <!-- Thẻ chia sẻ Zalo/Facebook: Zalo/FB không chạy JS nên phải ghi tay, nhớ cập nhật khi đổi người -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="💌 Thư mời chụp kỷ yếu – Phương Uyên 12A10">
+  <meta property="og:description" content="Trân trọng mời bạn tham gia buổi chụp ảnh kỷ yếu của Phương Uyên - 12A10!">
+  <meta property="og:image" content="https://loihoangkim.github.io/yearbook-invitation/Images/photo-01.jpg">
+  <meta property="og:url" content="https://loihoangkim.github.io/yearbook-invitation/">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Playfair+Display:ital,wght@0,500;1,500&family=Quicksand:wght@400;500;600;700&display=swap&subset=vietnamese" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="is-locked">
+
+  <!-- ===== Phong bì mở thiệp ===== -->
+  <div id="envelope" class="envelope" role="dialog" aria-label="Mở thiệp mời">
+    <div class="envelope__card">
+      <p class="envelope__to">Gửi đến</p>
+      <p class="envelope__guest" data-bind="guest">Bạn</p>
+      <div class="envelope__seal" aria-hidden="true">💌</div>
+      <p class="envelope__hint">Bạn có một thư mời nhỏ xinh nè</p>
+      <button id="openBtn" class="btn btn--primary" type="button">Mở thiệp</button>
+    </div>
+  </div>
+
+  <div class="petals" aria-hidden="true"></div>
+
+  <main class="page">
+
+    <!-- ===== Hero ===== -->
+    <header class="hero section">
+      <p class="hero__eyebrow" data-bind="title">Thư mời chụp ảnh kỷ yếu</p>
+      <div class="hero__frame">
+        <img id="coverImg" src="" alt="Ảnh bìa" width="734" height="994">
+      </div>
+      <h1 class="hero__name" data-bind="name"></h1>
+      <p class="hero__meta">
+        <span data-bind="class"></span>
+        <span class="dot" aria-hidden="true">•</span>
+        <span data-bind="years"></span>
+      </p>
+      <p class="hero__school" data-bind="school"></p>
+    </header>
+
+    <!-- ===== Lời mời ===== -->
+    <section class="section invite reveal">
+      <p class="invite__label">Thân mời</p>
+      <p class="invite__guest" data-bind="guest">Bạn</p>
+      <p class="invite__message" data-bind="message"></p>
+      <p class="sign">— <span data-bind="name"></span> —</p>
+    </section>
+
+    <!-- ===== Thời gian ===== -->
+    <section class="section reveal">
+      <h2 class="section__title">Thời gian</h2>
+      <div class="date-card">
+        <div class="date-card__side" data-bind="weekday"></div>
+        <div class="date-card__day" data-bind="day"></div>
+        <div class="date-card__side" data-bind="monthYear"></div>
+      </div>
+      <p class="time" data-bind="time"></p>
+      <p class="note" data-bind="note"></p>
+
+      <div class="countdown" id="countdown">
+        <div class="countdown__item"><span id="cdDays">0</span><small>Ngày</small></div>
+        <div class="countdown__item"><span id="cdHours">0</span><small>Giờ</small></div>
+        <div class="countdown__item"><span id="cdMins">0</span><small>Phút</small></div>
+        <div class="countdown__item"><span id="cdSecs">0</span><small>Giây</small></div>
+      </div>
+      <p class="countdown__done" id="countdownDone" hidden>Buổi chụp đã diễn ra rồi, cảm ơn cậu nhiều nha 💕</p>
+
+      <a id="calendarBtn" class="btn btn--ghost" href="#" target="_blank" rel="noopener">📅 Thêm vào lịch</a>
+    </section>
+
+    <!-- ===== Lịch trình ===== -->
+    <section class="section reveal" id="scheduleSection">
+      <h2 class="section__title">Lịch trình</h2>
+      <ol class="timeline" id="timeline"></ol>
+    </section>
+
+    <!-- ===== Địa điểm ===== -->
+    <section class="section reveal" id="locationSection">
+      <h2 class="section__title">Địa điểm</h2>
+      <p class="place__name" data-bind="placeName"></p>
+      <p class="place__address" data-bind="placeAddress"></p>
+      <div class="map" id="mapWrap">
+        <iframe id="mapFrame" title="Bản đồ địa điểm" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <a id="directionBtn" class="btn btn--primary" href="#" target="_blank" rel="noopener">📍 Chỉ đường</a>
+    </section>
+
+    <!-- ===== Album ===== -->
+    <section class="section reveal" id="albumSection">
+      <h2 class="section__title">Khoảnh khắc</h2>
+      <div class="gallery" id="gallery"></div>
+    </section>
+
+    <!-- ===== Liên hệ ===== -->
+    <section class="section reveal" id="contactSection">
+      <h2 class="section__title">Liên hệ</h2>
+      <p class="contact__name" data-bind="contactName"></p>
+      <div class="contact__links" id="contactLinks"></div>
+    </section>
+
+    <footer class="footer reveal">
+      <p class="footer__thanks">Hẹn gặp <span data-bind="guest">Bạn</span> nhé!</p>
+      <p class="footer__heart" aria-hidden="true">♡</p>
+    </footer>
+  </main>
+
+  <!-- ===== Lightbox ===== -->
+  <div id="lightbox" class="lightbox" hidden>
+    <button class="lightbox__close" type="button" aria-label="Đóng">×</button>
+    <button class="lightbox__nav lightbox__nav--prev" type="button" aria-label="Ảnh trước">‹</button>
+    <img class="lightbox__img" src="" alt="">
+    <button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Ảnh sau">›</button>
+    <p class="lightbox__count"></p>
+  </div>
+
+  <!-- ===== Nhạc nền ===== -->
+  <audio id="bgMusic" loop preload="none"></audio>
+  <button id="musicBtn" class="music-btn" type="button" aria-label="Bật/tắt nhạc" hidden>♪</button>
+
+  <!-- ===== Thông báo lỗi khi không đọc được settings.json ===== -->
+  <div id="loadError" class="load-error" hidden>
+    Không đọc được <code>settings.json</code>.<br>
+    Hãy mở trang qua <b>Live Server</b> hoặc <code>python -m http.server</code>,
+    không mở trực tiếp file <code>index.html</code>.
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

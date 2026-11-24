@@ -1,0 +1,68 @@
+{
+  "_huong_dan": "Điền thông tin vào các trường bên dưới. Giữ nguyên tên khoá (bên trái dấu :), chỉ sửa giá trị trong ngoặc kép. Trường nào không dùng thì để chuỗi rỗng \"\".",
+
+  "nguoi_moi": {
+    "ho_ten": "Hoàng Thị Phương Uyên",
+    "biet_danh": "",
+    "lop": "12A10",
+    "truong": "Trung tâm GDNN-GDTX Đan Phượng",
+    "nien_khoa": "2024 - 2027",
+    "loi_nhan": "Tớ sắp tốt nghiệp rồi nè! 🎓 Ghé chụp cùng tớ vài tấm ảnh thật xinh để cất giữ thanh xuân nha. Thiếu cậu là bức ảnh thiếu một nụ cười đó 💕"
+  },
+
+  "khach_mac_dinh": "Bạn",
+
+  "su_kien": {
+    "tieu_de": "Thư mời chụp ảnh kỷ yếu",
+    "ngay_gio": "2026-11-29T10:00:00+07:00",
+    "ngay_hien_thi": "Chủ nhật, 29/11/2026",
+    "gio_hien_thi": "10:00 sáng",
+    "ghi_chu": "Có mặt trước 15 phút để trang điểm & chuẩn bị."
+  },
+
+  "lich_trinh": [
+    { "gio": "10:00", "noi_dung": "Bắt đầu chụp ảnh kỷ yếu" }
+  ],
+
+  "dia_diem": {
+    "ten": "Trung tâm GDNN-GDTX Đan Phượng",
+    "dia_chi": "Trung tâm GDNN-GDTX Đan Phượng",
+    "google_maps_embed": "https://www.google.com/maps?q=Trung%20t%C3%A2m%20GDNN-GDTX%20%C4%90an%20Ph%C6%B0%E1%BB%A3ng&output=embed",
+    "google_maps_link": "https://www.google.com/maps/place/Trung+t%C3%A2m+GDNN-GDTX+%C4%90an+Ph%C6%B0%E1%BB%A3ng/data=!4m2!3m1!1s0x313456468662ff19:0x2a9712ac1d94b36"
+  },
+
+  "lien_he": {
+    "ten": "Hoàng Thị Phương Uyên",
+    "so_dien_thoai": "",
+    "zalo": "",
+    "facebook": "https://www.facebook.com/phuong.uyenn.438664",
+    "instagram": ""
+  },
+
+  "album": {
+    "anh_bia": "Images/photo-01.jpg",
+    "danh_sach": [
+      "Images/photo-01.jpg",
+      "Images/photo-02.jpg",
+      "Images/photo-03.jpg",
+      "Images/photo-04.jpg",
+      "Images/photo-05.jpg",
+      "Images/photo-06.jpg",
+      "Images/photo-07.jpg",
+      "Images/photo-08.jpg",
+      "Images/photo-09.jpg"
+    ]
+  },
+
+  "nhac_nen": {
+    "bat": true,
+    "file": "assets/music/bg.mp3"
+  },
+
+  "chia_se": {
+    "github_repo": "https://github.com/loihoangkim/yearbook-invitation",
+    "url_trang": "https://loihoangkim.github.io/yearbook-invitation/",
+    "anh_preview": "Images/photo-01.jpg",
+    "mo_ta": "Trân trọng mời bạn tham gia buổi chụp ảnh kỷ yếu của Phương Uyên - 12A10!"
+  }
+}
