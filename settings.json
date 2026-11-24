@@ -54,6 +54,20 @@
     ]
   },
 
+  "meme_chuc_mung": {
+    "tieu_de": "Lời chúc từ người nổi tiếng",
+    "ghi_chu": "* Lời chúc mang tính chất meme vui thôi nha 😆",
+    "danh_sach": [
+      { "anh": "Images/meme/jensen-huang.webp", "ten": "Jensen Huang", "loi_chuc": "Ảnh kỷ yếu của Uyên phải render bằng GPU xịn nhất mới đủ nét. Chúc mừng tốt nghiệp!" },
+      { "anh": "Images/meme/donald-trump.jpg", "ten": "Donald Trump", "loi_chuc": "Tremendous! Buổi chụp kỷ yếu đẹp nhất lịch sử, believe me. Make 12A10 great again!" },
+      { "anh": "Images/meme/khang-rong.jpg", "ten": "Khang Rồng", "loi_chuc": "Rồng cũng phải bay ra khỏi hang để đi chụp kỷ yếu với Uyên nè!" },
+      { "anh": "Images/meme/truong-giang.jpg", "ten": "Trường Giang", "loi_chuc": "Tốt nghiệp rồi thì... chụp thôi chứ sao! Chúc em tấm nào cũng xinh." },
+      { "anh": "Images/meme/virus.jpg", "ten": "Virus", "loi_chuc": "Lên hình xinh thế này thì ống kính nào chịu nổi. Chúc mừng em tốt nghiệp nha!" },
+      { "anh": "Images/meme/co-2-bao.jpg", "ten": "Cô 2 Báo", "loi_chuc": "Cô chúc con thi đâu đỗ đó, chụp tấm nào cũng xinh như tiên giáng trần!", "vi_tri_anh": "center 25%" },
+      { "anh": "Images/meme/chi-phien.jpg", "ten": "Chị Phiến", "loi_chuc": "Mặt chị buồn vậy thôi chứ trong lòng vui cho em lắm đó. Chúc mừng tốt nghiệp!", "vi_tri_anh": "center 30%" }
+    ]
+  },
+
   "nhac_nen": {
     "bat": true,
     "file": "assets/music/bg.mp3"

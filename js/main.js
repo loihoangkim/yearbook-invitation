@@ -75,6 +75,7 @@
     renderLocation(place);
     renderGallery(album);
     renderContacts(contact);
+    renderMemes(s.meme_chuc_mung || {});
     setupMusic(s.nhac_nen || {});
   }
 
@@ -241,6 +242,56 @@
       a.textContent = l.label;
       if (!/^tel:/.test(l.href)) { a.target = "_blank"; a.rel = "noopener"; }
       wrap.appendChild(a);
+    });
+  }
+
+  /* ---------- Meme chúc mừng ---------- */
+  function renderMemes(cfg) {
+    var items = (cfg.danh_sach || []).filter(function (m) { return m && m.anh; });
+    if (!items.length) return;
+
+    var section = $("#memeSection");
+    var wrap = $("#memes");
+    if (cfg.tieu_de) $("#memeTitle").textContent = cfg.tieu_de;
+    if (cfg.ghi_chu) { $("#memeNote").textContent = cfg.ghi_chu; $("#memeNote").hidden = false; }
+
+    var pending = items.length;
+    var loaded = 0;
+    var done = function () { if (--pending === 0 && loaded === 0) section.hidden = true; };
+
+    items.forEach(function (m) {
+      var fig = document.createElement("figure");
+      fig.className = "meme";
+
+      var img = document.createElement("img");
+      img.src = m.anh;
+      img.alt = m.ten ? "Meme " + m.ten : "Meme chúc mừng";
+      img.loading = "lazy";
+      img.decoding = "async";
+      if (m.vi_tri_anh) img.style.objectPosition = m.vi_tri_anh;
+      img.onload = function () { loaded++; section.hidden = false; done(); };
+      img.onerror = function () { fig.remove(); done(); }; // chưa có file ảnh thì tự ẩn
+      img.addEventListener("click", function () { window.open(m.anh, "_blank", "noopener"); });
+      fig.appendChild(img);
+
+      if (m.ten || m.loi_chuc) {
+        var cap = document.createElement("figcaption");
+        if (m.ten) {
+          var name = document.createElement("span");
+          name.className = "meme__name";
+          name.textContent = m.ten;
+          cap.appendChild(name);
+        }
+        if (m.loi_chuc) {
+          var text = document.createElement("span");
+          text.className = "meme__text";
+          text.textContent = "“" + m.loi_chuc + "”";
+          cap.appendChild(text);
+        }
+        fig.appendChild(cap);
+      }
+
+      wrap.appendChild(fig);
     });
   }
 

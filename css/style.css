@@ -200,7 +200,7 @@ img { max-width: 100%; display: block; }
 }
 
 .hero__frame {
-  width: min(78%, 300px);
+  width: min(90%, 360px);
   margin: 0 auto;
   padding: 8px;
   border-radius: 999px 999px 24px 24px;
@@ -210,8 +210,10 @@ img { max-width: 100%; display: block; }
 
 .hero__frame img {
   width: 100%;
+  height: auto;
   aspect-ratio: 3 / 4;
   object-fit: cover;
+  object-position: center 30%;
   border-radius: 999px 999px 18px 18px;
   background: var(--pink-50);
 }
@@ -473,6 +475,70 @@ img { max-width: 100%; display: block; }
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
+}
+
+/* ---------- Meme chúc mừng (polaroid) ---------- */
+.memes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px 14px;
+  padding: 6px 4px 0;
+}
+
+.meme {
+  margin: 0;
+  padding: 8px 8px 12px;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 10px 24px -12px rgba(192, 98, 124, 0.5);
+  transform: rotate(-2.5deg);
+  transition: transform 0.3s var(--ease);
+  cursor: zoom-in;
+}
+
+.meme:nth-child(even) { transform: rotate(2.5deg); }
+.meme:hover { transform: rotate(0) scale(1.03); }
+
+/* Số meme lẻ → tấm cuối nằm giữa */
+.meme:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: calc(50% - 7px);
+}
+
+.meme img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 3px;
+  background: var(--pink-50);
+}
+
+.meme figcaption { padding-top: 8px; }
+
+.meme__name {
+  display: block;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--pink-700);
+  line-height: 1.3;
+}
+
+.meme__text {
+  display: block;
+  margin-top: 4px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: var(--text);
+}
+
+.memes__note {
+  margin: 20px 0 0;
+  font-size: 0.8rem;
+  color: var(--muted);
 }
 
 /* ---------- Footer ---------- */
